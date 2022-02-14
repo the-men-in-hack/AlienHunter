@@ -23,7 +23,7 @@ router.post('/create', (req, res, next) => {
     },
     locationName: req.body.locationName,
     timeDate: req.body.timeDate,
-    reporter: req.body.reporter,
+    reporter: req.session.user._id,
     pictures: req.body.pictures,
     description: req.body.description,
   }
@@ -31,7 +31,7 @@ router.post('/create', (req, res, next) => {
   console.log(abductionDetails)
 
   Abduction.create(abductionDetails, )
-    .then( abduction => {
+    .then( (abduction) => {
       res.render("abduction/abduction-detail", abduction);
     })
     .catch( err => {
@@ -41,7 +41,7 @@ router.post('/create', (req, res, next) => {
 
 router.get("/:abductionId", (req, res, next) => {
     Abduction.findById(req.params.abductionId)
-    .then( abduction => {
+    .then( (abduction) => {
         res.render("abduction/abduction-detail", abduction);
     })
     .catch();
