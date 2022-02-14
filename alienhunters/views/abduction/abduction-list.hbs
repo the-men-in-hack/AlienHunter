@@ -1,5 +1,3 @@
-
-
 {{#each abductions}}
 <p> 
     <div id="abductionForm">
@@ -21,6 +19,10 @@
         <div class="block">
             <label>pictures:</label>{{this.pictures}}
         </div>
+        <div class="block">
+            <a href="/abduction/{{this.id}}/edit">edit:</a>
+        </div>
+
     </div>
     <a href="/abduction/{{this._id}}/edit">Edit</a>
 </p>

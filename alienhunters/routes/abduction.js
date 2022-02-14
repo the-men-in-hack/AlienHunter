@@ -30,9 +30,9 @@ router.post('/create', (req, res, next) => {
 
   console.log(abductionDetails)
 
-  Abduction.create(abductionDetails, )
-    .then( (abduction) => {
-      res.render("abduction/abduction-detail", abduction);
+  Abduction.create(abductionDetails,{returnNewDocument: true} )
+    .then( abduction => {
+      res.render("abduction/abduction-detail" , abduction);
     })
     .catch( err => {
       console.log('Error creating new abduction...', err);
