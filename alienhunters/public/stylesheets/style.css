@@ -1,6 +1,8 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: whitesmoke;
+  background-color: black;
   text-align: center;
 }
 
@@ -10,4 +12,30 @@ a {
 
 h1 {
   color: 15px;
+}
+
+#abductionForm {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+#leftForm {
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 10vw;
+}
+
+#rightForm {
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 30vw;
+}
+
+label {
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  border-top: 5px;
+}
+
+input {
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
