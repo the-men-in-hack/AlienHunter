@@ -7,7 +7,7 @@ const abductionSchema = new Schema(
         longitude: String
     },
     LocationName: String,
-    timeDate: String,
+    timeDate: Date,
     pictures: [],
     descriptions: String
   },
