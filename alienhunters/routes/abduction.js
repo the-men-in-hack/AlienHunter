@@ -83,7 +83,7 @@ router.post("/:abductionId/edit", (req, res, next) => {
 });
 
 
-router.post("/:abductionId/delete", (req, res, next) => {
+router.get("/:abductionId/delete", (req, res, next) => {
     Abduction.findByIdAndDelete(req.params.abductionId)
     .then(() => {
       res.redirect("/abduction");
