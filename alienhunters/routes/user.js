@@ -1,15 +1,15 @@
 const router = require("express").Router();
 const User = require("../models/User.model");
 
-router.get("/profile", (req, res, next) => {
+router.get("/profile", isLoggedIn, (req, res) => {
+    const userId = req.session.user._id
 
-    User
-      .find()
-      .then((userFromDb) => {
-        res.render("users/profile", { user: userFromDb });
-      })
-      .catch(err => console.log("Error getting book list", err));
-  });
-  
+  User
+    .findById(userId)
+    .then((user) => {
+      res.render("users/profile", user);
+    })
+    .catch(err => console.log("No user was found with this ID", err))
+});
 
-  module.exports = router;
+module.exports = router;
