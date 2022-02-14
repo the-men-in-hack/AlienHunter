@@ -2,14 +2,15 @@ const { Schema, model } = require("mongoose");
 
 const abductionSchema = new Schema(
   {
-    Location: {
+    location: {
         latitude: String,
         longitude: String
     },
-    LocationName: String,
-    timeDate: String,
+    locationName: String,
+    timeDate: Date,
     pictures: [],
-    descriptions: String
+    descriptions: String,
+    user: {type: Schema.Types.ObjectId, ref: 'User'}
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
