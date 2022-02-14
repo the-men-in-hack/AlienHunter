@@ -1,22 +1,23 @@
 <p> 
     <div id="abductionForm">
         <div class="block">
-            <label>Location (longitude/latitude):</label> {{this.location.coordinates}}/{{this.location.coordinates}}
+            <label>Location (longitude/latitude):</label> {{location.coordinates}}/{{location.coordinates}}
         </div>
         <div class="block">
-            <label>Location Name:</label>{{this.locationName}}
+            <label>Location Name:</label>{{locationName}}
         </div>
         <div class="block">
-            <label>Time/Date:</label>{{this.timeDate}}
+            <label>Time/Date:</label>{{timeDate}}
         </div>
         <div class="block">
-            <label>Reporter:</label>{{this.reporter}}
+            <label>Reporter:</label>{{reporter}}
         </div>
         <div class="block">
-            <label>Description:</label>{{this.description}}
+            <label>Description:</label>{{description}}
         </div>
         <div class="block">
-            <label>Pictures:</label>{{this.pictures}}
+            <img src="{{pictures}}" alt="Picture of abduction" width="500" height="600">
         </div>
     </div>
 </p>
+<a href="/abduction/{{id}}/delete">Delete</a>

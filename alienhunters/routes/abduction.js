@@ -4,6 +4,7 @@ const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
 router.get("/", (req, res, next) => {
+  const user = req.session.user
     Abduction.find()
     .then( abductionsFromDB => {
       res.render("abduction/abduction-list", {abductions: abductionsFromDB});
@@ -86,11 +87,13 @@ router.post("/:abductionId/edit", isLoggedIn, (req, res, next) => {
 
 
 router.post("/:abductionId/delete", isLoggedIn, (req, res, next) => {
-    Abduction.findByIdAndDelete(req.params.abductionId)
-    .then(() => {
-      res.redirect("/abduction");
+  
+    Abduction
+      .findByIdAndDelete(req.params.abductionId)
+      .then(() => {
+        res.redirect("/abduction");
     })
-    .catch(err => {
+      .catch(err => {
       console.log("Error deleting abduction...", err);
     });
 
