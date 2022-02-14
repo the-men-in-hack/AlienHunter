@@ -23,16 +23,16 @@ router.post('/create', (req, res, next) => {
     },
     locationName: req.body.locationName,
     timeDate: req.body.timeDate,
-    reporter: req.body.reporter,
+    reporter: req.session.user._id,
     pictures: req.body.pictures,
     description: req.body.description,
   }
 
   console.log(abductionDetails)
 
-  Abduction.create(abductionDetails, )
+  Abduction.create(abductionDetails,{returnNewDocument: true} )
     .then( abduction => {
-      res.render("abduction/abduction-detail", abduction);
+      res.render("abduction/abduction-detail" , abduction);
     })
     .catch( err => {
       console.log('Error creating new abduction...', err);
