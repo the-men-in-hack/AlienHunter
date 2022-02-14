@@ -41,7 +41,7 @@ router.post('/create', (req, res, next) => {
 
 router.get("/:abductionId", (req, res, next) => {
     Abduction.findById(req.params.abductionId)
-    .then( abduction => {
+    .then( (abduction) => {
         res.render("abduction/abduction-detail", abduction);
     })
     .catch();
