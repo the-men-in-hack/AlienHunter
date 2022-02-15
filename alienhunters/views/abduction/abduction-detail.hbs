@@ -1,7 +1,7 @@
 <p> 
     <div id="abductionForm">
         <div class="block">
-            <label>Location (longitude/latitude):</label> {{location.coordinates}}/{{location.coordinates}}
+            <label>Location (longitude/latitude):</label> {{location.coordinates.[0]}}/{{location.coordinates.[1]}}
         </div>
         <div class="block">
             <label>Location Name:</label>{{locationName}}
@@ -15,11 +15,13 @@
         <div class="block">
             <label>Description:</label>{{description}}
         </div>
-        {{#each pictures}}
-        <div class="block">
-            <img src="{{this}}" alt="Picture of abduction" width="500" height="600">
-        </div>
-        {{/each}}
+        {{#if pictures.[0]}}
+                {{#each pictures}}
+                    <div class="block">
+                        <img src="{{this}}" alt="Picture of abduction" width="500" height="600">
+                    </div>
+                {{/each}}
+        {{/if}}
     </div>
 </p>
 <a href="/abduction/{{id}}/delete">Delete</a>
