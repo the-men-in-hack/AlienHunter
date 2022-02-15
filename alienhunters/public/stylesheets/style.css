@@ -1,11 +1,37 @@
+/* Main color pallet:  
+        Dark: #22577A
+        Light Dark: #38A3A5
+        Dark Light: #57CC99
+        Light: #80ED99 */
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: whitesmoke;
-  background-color: black;
+  background-color: #38A3A5;
   text-align: center;
 }
 
+.row {
+  border: #22577A solid 4px;
+  padding: 1rem 0rem 1rem 0rem;
+  background-color: #57CC99;
+}
+.btns{
+  text-align: end;
+}
+
+.logo{
+  text-align: left;
+}
+
+.headerBtn {
+  text-decoration: none;
+  color: black;
+}
+.userBtn {
+  padding-left: 1rem;
+}
 a {
   color: #00b7ff;
 }
