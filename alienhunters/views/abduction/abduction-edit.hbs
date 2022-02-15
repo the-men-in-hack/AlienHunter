@@ -4,7 +4,7 @@
             <form action="/abduction/{{id}}/edit" method="post">
 
                 <div class="block">
-                    <label>Location (latitude/longitude):</label><input type="text" name="longitude" value={{this.location.coordinates}}></input><input type="text" value={{this.location.coordinates}}></input>
+                    <label>Location (latitude/longitude):</label><input type="text" name="longitude" value={{this.location.coordinates.[0]}}></input><input type="text" value={{this.location.coordinates.[1]}}></input>
                 </div>
 
                 <div class="block">
