@@ -55,7 +55,9 @@ router.get("/:abductionId", isLoggedIn, (req, res, next) => {
 });
 
 router.get("/:abductionId/edit", isLoggedIn, (req, res, next) => {
-    Abduction.findById(req.params.abductionId)
+    Abduction
+    .findById(req.params.abductionId)
+    .populate("reporter")
     .then( (abductionDetails) => {
       res.render("abduction/abduction-edit", abductionDetails);
     })
