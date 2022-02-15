@@ -16,18 +16,21 @@
         <div class="block">
             <label>description:</label>{{this.description}}
         </div>
+        {{#if this.pictures}}
         <div class="block">
-            <label>pictures:</label>{{this.pictures}}
+            <img src="{{this.pictures}}" alt="Picture of abduction" width="200" height="250">
         </div>
+        {{/if}}
         <div class="block">
             <a href="/abduction/{{this.id}}/edit">edit:</a>
         </div>
         <div class="block">
             <a href="/abduction/{{this.id}}/delete">delete:</a>
         </div>
-
+        <div class="block"></div>
+            <a href="/abduction/{{this.id}}">Details</a>
+        </div>
     </div>
-    <a href="/"></a>
 </p>
 {{/each}}
 

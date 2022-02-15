@@ -1,7 +1,10 @@
 const router = require("express").Router();
 const Abduction = require("../models/Abduction.model");
+const isLoggedOut = require("../middleware/isLoggedOut");
+const isLoggedIn = require("../middleware/isLoggedIn");
 
 router.get("/", (req, res, next) => {
+  const user = req.session.user
     Abduction.find()
     .then( abductionsFromDB => {
       res.render("abduction/abduction-list", {abductions: abductionsFromDB});
@@ -10,11 +13,11 @@ router.get("/", (req, res, next) => {
 });
 
     
-router.get("/create", (req, res, next) => {
+router.get("/create", isLoggedIn, (req, res, next) => {
     res.render("abduction/abduction-new");
 });
     
-router.post('/create', (req, res, next) => {
+router.post('/create', isLoggedIn, (req, res, next) => {
 
   const abductionDetails = {
     location: {
@@ -39,7 +42,7 @@ router.post('/create', (req, res, next) => {
     })
 })
 
-router.get("/:abductionId", (req, res, next) => {
+router.get("/:abductionId", isLoggedIn, (req, res, next) => {
     Abduction.findById(req.params.abductionId)
     .then( (abduction) => {
         res.render("abduction/abduction-detail", abduction);
@@ -47,7 +50,7 @@ router.get("/:abductionId", (req, res, next) => {
     .catch();
 });
 
-router.get("/:abductionId/edit", (req, res, next) => {
+router.get("/:abductionId/edit", isLoggedIn, (req, res, next) => {
     Abduction.findById(req.params.abductionId)
     .then( (abductionDetails) => {
       res.render("abduction/abduction-edit", abductionDetails);
@@ -57,7 +60,7 @@ router.get("/:abductionId/edit", (req, res, next) => {
     });
 });
 
-router.post("/:abductionId/edit", (req, res, next) => {
+router.post("/:abductionId/edit", isLoggedIn, (req, res, next) => {
   const abductionId = req.params.abductionId;
 
   const abductionDetails = {
@@ -73,7 +76,8 @@ router.post("/:abductionId/edit", (req, res, next) => {
     description: req.body.description,
   }
 
-  Abduction.findByIdAndUpdate(abductionId, abductionDetails)
+  Abduction
+    .findByIdAndUpdate(abductionId, abductionDetails)
     .then( () => {
       res.redirect(`/abduction/${abductionId}`);
     })
@@ -82,16 +86,16 @@ router.post("/:abductionId/edit", (req, res, next) => {
     });
 });
 
-
-router.get("/:abductionId/delete", (req, res, next) => {
-    Abduction.findByIdAndDelete(req.params.abductionId)
-    .then(() => {
-      res.redirect("/abduction");
+router.get("/:abductionId/delete", isLoggedIn, (req, res, next) => {
+  
+    Abduction
+      .findByIdAndDelete(req.params.abductionId)
+      .then(() => {
+        res.redirect("/abduction");
     })
-    .catch(err => {
+      .catch(err => {
       console.log("Error deleting abduction...", err);
     });
-
 });
 
 module.exports = router;

@@ -1,5 +1,13 @@
 <h1>{{title}}</h1>
 <p>Welcome to the alien hunters database.</p>
 
+{{#if session.user}}
 
-<a href="/auth/signup">Signup</a> | <a href="/auth/login">Login</a>
+ <a href="/abduction">Home</a>
+
+{{else}}
+
+<a href="/auth/signup">Signup</a> | <a href="/auth/login">Login</a> 
+
+
+{{/if}}
