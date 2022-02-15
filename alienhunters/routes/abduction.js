@@ -76,7 +76,8 @@ router.post("/:abductionId/edit", isLoggedIn, (req, res, next) => {
     description: req.body.description,
   }
 
-  Abduction.findByIdAndUpdate(abductionId, abductionDetails)
+  Abduction
+    .findByIdAndUpdate(abductionId, abductionDetails)
     .then( () => {
       res.redirect(`/abduction/${abductionId}`);
     })
@@ -86,7 +87,7 @@ router.post("/:abductionId/edit", isLoggedIn, (req, res, next) => {
 });
 
 
-router.post("/:abductionId/delete", isLoggedIn, (req, res, next) => {
+router.get("/:abductionId/delete", isLoggedIn, (req, res, next) => {
   
     Abduction
       .findByIdAndDelete(req.params.abductionId)
@@ -96,7 +97,6 @@ router.post("/:abductionId/delete", isLoggedIn, (req, res, next) => {
       .catch(err => {
       console.log("Error deleting abduction...", err);
     });
-
 });
 
 module.exports = router;
