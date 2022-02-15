@@ -1,5 +1,4 @@
 const { Schema, model } = require("mongoose");
-const User = require("./User.model");
 
 const abductionSchema = new Schema(
   {
@@ -18,7 +17,7 @@ const abductionSchema = new Schema(
     },
     locationName: String,
     timeDate: Date,
-    pictures: [],
+    pictures: [String],
     description: String,
     reporter: { type: Schema.Types.ObjectId, ref: 'User' }
   },

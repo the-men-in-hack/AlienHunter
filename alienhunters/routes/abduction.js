@@ -28,15 +28,16 @@ router.post('/create', isLoggedIn, (req, res, next) => {
     },
     locationName: req.body.locationName,
     timeDate: req.body.timeDate,
-    reporter: req.session.user._id,
     pictures: req.body.pictures,
     description: req.body.description,
+    reporter: req.session.user._id,
   }
 
   console.log(abductionDetails)
 
-  Abduction.create(abductionDetails,{returnNewDocument: true} )
+  Abduction.create(abductionDetails ) //,{new: true} 
     .then( abduction => {
+      console.log(abduction);
       res.render("abduction/abduction-detail" , abduction);
     })
     .catch( err => {

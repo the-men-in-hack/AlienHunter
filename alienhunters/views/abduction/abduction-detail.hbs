@@ -15,9 +15,11 @@
         <div class="block">
             <label>Description:</label>{{description}}
         </div>
+        {{#each pictures}}
         <div class="block">
-            <img src="{{pictures}}" alt="Picture of abduction" width="500" height="600">
+            <img src="{{this}}" alt="Picture of abduction" width="500" height="600">
         </div>
+        {{/each}}
     </div>
 </p>
 <a href="/abduction/{{id}}/delete">Delete</a>
