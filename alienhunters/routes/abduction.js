@@ -5,11 +5,13 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 
 router.get("/", (req, res, next) => {
   const user = req.session.user
-    Abduction.find()
-    .then( abductionsFromDB => {
-      res.render("abduction/abduction-list", {abductions: abductionsFromDB});
-    })
-    .catch();
+    Abduction
+      .find()
+      .populate("reporter")
+      .then( abductionsFromDB => {
+        res.render("abduction/abduction-list", {abductions: abductionsFromDB});
+      })
+      .catch();
 });
 
     

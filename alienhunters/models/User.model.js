@@ -8,6 +8,24 @@ const userSchema = new Schema(
        unique: true
     },
     password: String,
+    picture: String,
+    name: String,
+    lastname: String,
+    age: Number,
+    hobby: String,
+    haveBeenAbducted: {
+      type: String,
+      enum: ["Yes", "No"]
+    },
+    haveBeenProbed: {
+      type: String,
+      enum: ["Yes", "No"]
+    },
+    probeLocation: [String],
+    experiments: [String],
+    country: String,
+    alienDescription: String,
+   
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
