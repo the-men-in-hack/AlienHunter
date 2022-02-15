@@ -22,6 +22,7 @@ const projectName = "Alien hunters";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
 app.locals.title = `${capitalized(projectName)}`;
+//app.locals.whenLoggedOut = false;
 
 // 👇 Start handling routes here
 const index = require("./routes/index");
@@ -31,6 +32,7 @@ const authRoutes = require("./routes/auth");
 app.use("/auth", authRoutes);
 
 app.use("/abduction", require("./routes/abduction"));
+app.use("/user", require("./routes/user"));
 
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes

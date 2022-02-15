@@ -141,17 +141,6 @@ router.post("/login", isLoggedOut, (req, res, next) => {
     });
 });
 
-router.get("/profile", isLoggedIn, (req, res) => {
-  const userId = req.session.user._id
-
-User
-  .findById(userId)
-  .then((user) => {
-    res.render("users/profile", user);
-  })
-  .catch(err => console.log("No user was found with this ID", err))
-});
-
 router.get("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {
     if (err) {

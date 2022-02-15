@@ -4,11 +4,12 @@ const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
 router.get("/", (req, res, next) => {
-  const user = req.session.user
+
     Abduction
       .find()
       .populate("reporter")
       .then( abductionsFromDB => {
+        //req.app.locals.whenLoggedOut = true;
         res.render("abduction/abduction-list", {abductions: abductionsFromDB});
       })
       .catch();

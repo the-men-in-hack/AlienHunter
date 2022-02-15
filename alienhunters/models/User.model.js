@@ -9,9 +9,10 @@ const userSchema = new Schema(
     },
     password: String,
     picture: String,
-    name: String,
+    firstname: String,
     lastname: String,
     age: Number,
+    country: String,
     hobby: String,
     haveBeenAbducted: {
       type: String,
@@ -23,7 +24,6 @@ const userSchema = new Schema(
     },
     probeLocation: [String],
     experiments: [String],
-    country: String,
     alienDescription: String,
    
   },

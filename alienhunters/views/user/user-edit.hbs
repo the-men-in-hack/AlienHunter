@@ -1,0 +1,58 @@
+<p> 
+    <div id="abductionForm">
+        <div>
+            <form action="/user/{{id}}/edit" method="post"> 
+            <div class="block">
+                <label>Username: </label><input type="text" name="username" value="{{username}}"></input>
+            </div>
+            <div class="block">
+                <label>Firstname:</label><input type="text" name="firstname" value="{{firstname}}"></input>
+            </div>
+            <div class="block">
+                <label>Lastname</label><input type="text" name="lastname" value="{{lastname}}"></input>
+            </div>
+            <div class="block">
+                <label>Age:</label><input type="number" name="age" value="{{age}}"></input>
+            </div>
+            <div class="block">
+                <label>Country:</label><input type="text" name="country" value="{{country}}"></input>
+            </div>
+            <div class="block">
+                <label>Hobby:</label><input type="text" name="hobby" value="{{hobby}}"></input>
+            </div>
+            <div class="block">
+                <label>Have you been abducted? </label>
+                <select id="yes or no" name="haveBeenAbducted">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="block">
+                <label>Have you been probed? </label>
+                <select id="yes or no" name="haveBeenProbed">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="block">
+                <label>Where have you been probed?</label><input type="text" name="probeLocation" value="{{probeLocation}}"></input>
+            </div>
+            <div class="block">
+                <label>What experiments did they do?</label><input type="text" name="experiments" value="{{experiments}}"></input>
+            </div>
+            <div class="block">
+                <label>Please describe the Alien in detail?</label><input type="text" name="alienDescription" value="{{alienDescription}}"></input>
+            </div>
+            <div class="block">
+                <label>picture:</label><input type="text" name="picture" ></input>
+            </div>
+            <div class="block">
+                <button>send</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</p>
+
+<a href="/abduction">Back</a>
