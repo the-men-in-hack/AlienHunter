@@ -5,6 +5,7 @@
         Light: #80ED99 */
 
 body {
+  font-family: 'Roboto Condensed', sans-serif;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: whitesmoke;
@@ -13,9 +14,7 @@ body {
 }
 
 .row {
-  border: #22577A solid 4px;
   padding: 1rem 0rem 1rem 0rem;
-  background-color: #57CC99;
 }
 .btns{
   text-align: end;
@@ -29,12 +28,12 @@ body {
   .headerBtn::after {
     padding: 16px 20px;
     font-size: 18px;
-    background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
+    background: linear-gradient(45deg, transparent 5%, #22577A 5%);
     border: 0;
     color: #fff;
     letter-spacing: 3px;
     line-height: 1;
-    box-shadow: 6px 0px 0px #00e6f6;
+    box-shadow: 6px 0px 0px #38A3A5;
     outline: transparent;
     position: relative;
 }
@@ -53,7 +52,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #ff013c 5%);
+  background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #22577A 5%);
   text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
   clip-path: var(--slice-0);
  }
@@ -120,7 +119,6 @@ body {
   }
  }
  
-
 .userBtn {
   padding-left: 1rem;
 }
