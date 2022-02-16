@@ -1,27 +1,40 @@
 /* Main color pallet:  
-        Dark: #22577A
-        Light Dark: #38A3A5
-        Dark Light: #57CC99
-        Light: #80ED99 */
+        Dark: #071C21
+        Light Dark: #153B44
+        Dark Light: #2D6E7E
+        Light: #C6DE41 */
 
 body {
   font-family: 'Roboto Condensed', sans-serif;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: whitesmoke;
-  background-color: #38A3A5;
+  background-color: #153B44;
   text-align: center;
+  padding-top: 0;
+  margin-top: 20px;
 }
 
-.container {
+img {
   padding: 0;
+  margin: 0;
+}
+.container {
+  padding: 0px;
   margin: 0;
 }
 
 .row {
-  padding: 1rem 0rem 1rem 0rem;
-  margin-bottom: 30px;
+  padding: 0.5rem 0rem 0.5rem 0rem;
+  margin: 0px;
+  /* background-color: #2D6E7E; */
 }
+
+.col {
+  margin: 0;
+  padding: 0;
+}
+
 .btns{
   text-align: end;
 }
@@ -34,12 +47,12 @@ body {
   .headerBtn::after {
     padding: 16px 20px;
     font-size: 18px;
-    background: linear-gradient(45deg, transparent 5%, #22577A 5%);
+    background: linear-gradient(45deg, transparent 5%, #071C21 5%);
     border: 0;
-    color: #fff;
+    color: #C6DE41;
     letter-spacing: 3px;
     line-height: 1;
-    box-shadow: 6px 0px 0px #38A3A5;
+    /* box-shadow: 6px 0px 0px #153B44; */
     outline: transparent;
     position: relative;
 }
@@ -58,8 +71,8 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #22577A 5%);
-  text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+  background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #071C21 5%);
+  text-shadow: -3px -3px 0px #C6DE41, 3px 3px 0px #00e6f6;
   clip-path: var(--slice-0);
  }
  
