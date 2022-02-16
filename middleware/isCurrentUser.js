@@ -7,8 +7,10 @@ const Abduction = require("../models/Abduction.model");
             console.log("before if", abductionDetails.reporter)
             if(req.session.user._id != abductionDetails.reporter){
                 console.log("inside if",req.session.user._id)
-                res.redirect("/")
+                return res.redirect("/")
+            }else{
+                next()
             }
     })
-    next();
+    //next();
 }

@@ -44,9 +44,11 @@
         <div class="block"></div>
             <a href="/abduction/{{this.id}}">Details</a>
         </div>
+        {{#if isUser}}
         <div class="block">
             <a href="/abduction/{{this.id}}/edit">Edit:</a>
         </div>
+        {{/if}}
         <div class="block">
             <a href="/abduction/{{this.id}}/delete">Delete:</a>
         </div>
