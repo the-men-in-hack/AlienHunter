@@ -97,11 +97,9 @@ router.post("/:abductionId/edit", isLoggedIn, isCurrentUser, (req, res, next) =>
 });
 
 router.get("/:abductionId/delete", isLoggedIn, isCurrentUser, (req, res, next) => {
-      console.log("outside delete")
-    Abduction
+      Abduction
       .findByIdAndDelete(req.params.abductionId)
       .then(() => {
-        console.log("inside delete")
         res.redirect("./");
     })
       .catch(err => {

@@ -12,11 +12,11 @@ router.get("/", (req, res, next) => {
     .find()
     .populate("reporter")
     .then(abductionsFromDB => {
-      console.log(abductionsFromDB)
-      if(req.session.user._id == abductionsFromDB.reporter._id) {
-        isUser =  true
-      }
-      res.render("index", {abductions: abductionsFromDB, isUser});
+      // console.log(abductionsFromDB)
+      // if(req.session.user._id == abductionsFromDB.reporter._id) {
+      //   isUser =  true
+      // }
+      res.render("index", {abductions: abductionsFromDB,});
     })
     .catch(err => console.log("no posts found in DB", err));
 });
