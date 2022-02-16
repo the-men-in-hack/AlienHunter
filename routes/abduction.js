@@ -2,6 +2,7 @@ const router = require("express").Router();
 const Abduction = require("../models/Abduction.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
+const isCurrentUser = require("../middleware/isCurrentUser");
 
 router.get("/", (req, res, next) => {
 
@@ -55,8 +56,10 @@ router.get("/:abductionId", isLoggedIn, (req, res, next) => {
       .catch();
 });
 
-router.get("/:abductionId/edit", isLoggedIn, (req, res, next) => {
-    Abduction
+router.get("/:abductionId/edit", isLoggedIn,isCurrentUser,(req, res, next) => {
+  console.log(req.session.user._id)  
+  
+  Abduction
     .findById(req.params.abductionId)
     .populate("reporter")
     .then( (abductionDetails) => {
@@ -67,7 +70,7 @@ router.get("/:abductionId/edit", isLoggedIn, (req, res, next) => {
     });
 });
 
-router.post("/:abductionId/edit", isLoggedIn, (req, res, next) => {
+router.post("/:abductionId/edit", isLoggedIn, isCurrentUser, (req, res, next) => {
   const abductionId = req.params.abductionId;
 
   const abductionDetails = {
@@ -93,12 +96,13 @@ router.post("/:abductionId/edit", isLoggedIn, (req, res, next) => {
     });
 });
 
-router.get("/:abductionId/delete", isLoggedIn, (req, res, next) => {
-  
+router.get("/:abductionId/delete", isLoggedIn, isCurrentUser, (req, res, next) => {
+      console.log("outside delete")
     Abduction
       .findByIdAndDelete(req.params.abductionId)
       .then(() => {
-        res.redirect("/abduction");
+        console.log("inside delete")
+        res.redirect("./");
     })
       .catch(err => {
       console.log("Error deleting abduction...", err);

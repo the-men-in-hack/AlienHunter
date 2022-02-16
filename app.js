@@ -24,10 +24,11 @@ const projectName = "Alien hunters";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
 app.locals.title = `${capitalized(projectName)}`;
-// app.use((req,res,next) => {
-//     req.app.locals.userDetails = req.session.user.username;
-//     next()
-//   });
+
+app.use((req,res,next) => {
+    req.app.locals.userDetails = req.session.user;
+    next()
+  });
 
 // 👇 Start handling routes here
 const index = require("./routes/index");
