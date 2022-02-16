@@ -25,6 +25,8 @@ const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowe
 
 app.locals.title = `${capitalized(projectName)}`;
 
+app.locals.maps_api_key = process.env.MAPS_API_KEY;
+
 app.use((req,res,next) => {
     req.app.locals.userDetails = req.session.user;
     next()
