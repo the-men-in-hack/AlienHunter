@@ -1,5 +1,5 @@
 {
   "scripts": {
-  "start": "node backend/server.js"
+  "start": "node alienhunters/server.js"
   }
 }
