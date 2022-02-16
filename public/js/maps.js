@@ -96,12 +96,12 @@
 
   
      });
-  //   var pos = new google.maps.LatLng(38.500000, -98.000000 );
+     var pos = new google.maps.LatLng(38.500000, -98.000000 );
 
-  //   var marker = new CustomMarker({
-  //     position: pos,
-  //     map: map,
-  // });
+     var marker = new CustomMarker({
+       position: pos,
+       map: map,
+   });
 
     const myMarker = new google.maps.Marker({
       position: {
@@ -123,20 +123,15 @@
       var self = this;
       var div = this.div;
       if (!div) {
-          div = this.div = $('' +
-              '<div class="pulse"></div>' +
-              '')[0];
-  
-          div.style.position = 'absolute';
-          div.style.cursor = 'pointer';
+          div = document.createElement('div');
+          div.classList.add('pulse');
           var panes = this.getPanes();
           panes.overlayImage.appendChild(div);
-         
       }
       var point = this.getProjection().fromLatLngToDivPixel(this.position);
       if (point) {
-          div.style.left = point.x + 'px';
-          div.style.top = point.y + 'px';
+          this.div.style.left = point.x + 'px';
+          this.div.style.top = point.y + 'px';
       }
   };
 
