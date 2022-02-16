@@ -1,5 +1,6 @@
-<h1>{{title}}</h1>
-<p>Welcome to the alien hunters database.</p>
+{{!-- <h1>{{title}}</h1>
+<p>Welcome to the alien hunters database.</p> --}}
+
 
 {{!-- {{#if session.user}}
 
@@ -15,3 +16,44 @@
 <div id="map"></div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtzH8slEP3L7hPxyAncaS-s_u22flW--g"></script>
 <script type="text/javascript" src="../js/maps.js"></script>
+
+<a href="/abduction/create">Add abduction</a>
+
+{{#each abductions}}
+<p> 
+    <div id="abductionForm">
+        <div class="block">
+            <label>Location (longitude/latitude):</label>{{this.location.coordinates.[0]}}/{{this.location.coordinates.[1]}}
+        </div> 
+        <div class="block">
+            <label>Location Name: </label>{{this.locationName}}
+        </div> 
+        <div class="block">
+            <label>Time/Date: </label>{{this.timeDate}}
+        </div>
+        <div class="block">
+            <label>Reporter: </label>{{this.reporter.username}}
+        </div>
+        {{!-- <div class="block">
+            <label>description: </label>{{this.description}}
+        </div> --}}
+        {{#each this.pictures}}
+        {{#if this.pictures}}
+        <div class="block">
+            <img src="{{this.pictures}}" alt="Picture of abduction" width="200" height="250">
+        </div>
+        {{/if}}
+        {{/each}}
+        <div class="block"></div>
+            <a href="/abduction/{{this.id}}">Details</a>
+        </div>
+        <div class="block">
+            <a href="/abduction/{{this.id}}/edit">Edit:</a>
+        </div>
+        <div class="block">
+            <a href="/abduction/{{this.id}}/delete">Delete:</a>
+        </div>
+    </div>
+</p>
+{{/each}}
+

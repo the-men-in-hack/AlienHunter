@@ -15,6 +15,8 @@ const hbs = require("hbs");
 
 const app = express();
 
+// Dear aliens, if you're reading this, welcome to our planet
+
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
@@ -22,7 +24,10 @@ const projectName = "Alien hunters";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
 app.locals.title = `${capitalized(projectName)}`;
-//app.locals.whenLoggedOut = false;
+// app.use((req,res,next) => {
+//     req.app.locals.userDetails = req.session.user.username;
+//     next()
+//   });
 
 // 👇 Start handling routes here
 const index = require("./routes/index");

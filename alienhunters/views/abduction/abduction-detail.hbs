@@ -10,7 +10,7 @@
             <label>Time/Date:</label>{{timeDate}}
         </div>
         <div class="block">
-            <label>Reporter:</label>{{reporter}}
+            <label>Reporter:</label>{{reporter.username}}
         </div>
         <div class="block">
             <label>Description:</label>{{description}}
@@ -22,7 +22,9 @@
                     </div>
                 {{/each}}
         {{/if}}
+        <dir>
+            <a href="/abduction/{{id}}/delete">Delete</a>
+        </dir>
     </div>
 </p>
-<a href="/abduction/{{id}}/delete">Delete</a>
-<a href="/abduction">Home</a>
+

@@ -4,26 +4,26 @@
             <form action="/abduction/{{id}}/edit" method="post">
 
                 <div class="block">
-                    <label>Location (latitude/longitude):</label><input type="text" name="longitude" value={{this.location.coordinates.[0]}}></input><input type="text" value={{this.location.coordinates.[1]}}></input>
+                    <label>Location (latitude/longitude):</label><input type="text" name="longitude" value="{{this.location.coordinates.[0]}}"></input><input type="text" value="{{this.location.coordinates.[1]}}"></input>
                 </div>
 
                 <div class="block">
-                    <label>Location Name:</label><input type="text" name="locationName" value={{locationName}}></input>
+                    <label>Location Name:</label><input type="text" name="locationName" value="{{locationName}}"></input>
                 </div>
 
-                    <div class="block"><label>Date:</label><input type="text" name="TimeDate" value={{timeDate}}></input>
+                    <div class="block"><label>Date:</label><input type="date" name="TimeDate" value={{timeDate}}></input>
                 </div>
 
-                <div class="block">
+                {{!-- <div class="block">
                     <label>Reporter:</label><input type="text" name="User" value={{reporter.username}}></input>
-                </div>
+                </div> --}}
 
                 <div class="block">
-                    <label>description:</label><input type="text" name="description" value={{description}}></input>
+                    <label>description:</label><input type="text" name="description" value="{{description}}"></input>
                 </div>
                 
                 <div class="block">
-                    <label>pictures:</label><input type="text" name="pictures" value={{pictures}}></input>
+                    <label>pictures:</label><input type="text" name="pictures" ></input>
                 </div>
                 
                 <div class="block">
@@ -35,4 +35,3 @@
     </div>
 </p>
 
-<a href="/abduction">Home</a>

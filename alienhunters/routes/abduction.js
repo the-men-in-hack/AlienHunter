@@ -9,10 +9,9 @@ router.get("/", (req, res, next) => {
       .find()
       .populate("reporter")
       .then( abductionsFromDB => {
-        //req.app.locals.whenLoggedOut = true;
         res.render("abduction/abduction-list", {abductions: abductionsFromDB});
       })
-      .catch();
+      .catch(err => console.log("no posts found in DB", err));
 });
 
     
@@ -47,11 +46,13 @@ router.post('/create', isLoggedIn, (req, res, next) => {
 })
 
 router.get("/:abductionId", isLoggedIn, (req, res, next) => {
-    Abduction.findById(req.params.abductionId)
-    .then( (abduction) => {
+    Abduction
+      .findById(req.params.abductionId)
+      .populate("reporter")
+      .then( (abduction) => {
         res.render("abduction/abduction-detail", abduction);
-    })
-    .catch();
+      })
+      .catch();
 });
 
 router.get("/:abductionId/edit", isLoggedIn, (req, res, next) => {
