@@ -129,13 +129,13 @@ a {
 h1 {
   color: 15px;
 }
-
+/* 
 #abductionForm {
   display: flex;
   justify-content: left;
   flex-wrap: wrap;
   flex-direction: column;
-}
+} */
 
 /* #leftForm {
   font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -158,7 +158,7 @@ input {
 
 /* .block {
   width: 300px;
-}
+}*/
 
 #map {
   height: 500px;
