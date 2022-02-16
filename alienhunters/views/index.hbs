@@ -1,7 +1,7 @@
 <h1>{{title}}</h1>
 <p>Welcome to the alien hunters database.</p>
 
-{{#if session.user}}
+{{!-- {{#if session.user}}
 
  <a href="/abduction">Home</a>
 
@@ -9,5 +9,9 @@
 
 <a href="/auth/signup">Signup</a> | <a href="/auth/login">Login</a> 
 
+{{/if}} --}}
 
-{{/if}}
+
+<div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtzH8slEP3L7hPxyAncaS-s_u22flW--g"></script>
+<script type="text/javascript" src="../js/maps.js"></script>
