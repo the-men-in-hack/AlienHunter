@@ -40,14 +40,14 @@ h1 {
   color: 15px;
 }
 
-#abductionForm {
+/* #abductionForm {
   display: flex;
   justify-content: left;
   flex-wrap: wrap;
   flex-direction: column;
-}
+} */
 
-#leftForm {
+/* #leftForm {
   font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
   width: 10vw;
 }
@@ -64,8 +64,8 @@ label {
 
 input {
   font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+} */
 
-.block {
+/* .block {
   width: 300px;
-}
+} */
