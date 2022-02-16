@@ -6,11 +6,10 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 /* GET home page */
 
 router.get("/", (req, res, next) => {
-
   Abduction
     .find()
     .populate("reporter")
-    .then( abductionsFromDB => {
+    .then(abductionsFromDB => {
       res.render("index", {abductions: abductionsFromDB});
     })
     .catch(err => console.log("no posts found in DB", err));
