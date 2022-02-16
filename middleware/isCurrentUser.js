@@ -11,6 +11,6 @@ const Abduction = require("../models/Abduction.model");
             }else{
                 next()
             }
-    })
-    //next();
+        })
+        .catch(err => console.log("could not execute isCurrentUser middleware", err))
 }

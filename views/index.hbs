@@ -17,7 +17,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key="></script>
 <script type="text/javascript" src="../js/maps.js"></script>
 
-<a href="/abduction/create">Add abduction</a>
+<a class= "headerBtn addAbductionBtn" href="/abduction/create">ADD ABDUCTION</a>
 
 {{#each abductions}}
 <p> 
@@ -44,11 +44,11 @@
         <div class="block"></div>
             <a href="/abduction/{{this.id}}">Details</a>
         </div>
-        {{#if isUser}}
+        {{!-- {{#if isUser}} --}}
         <div class="block">
             <a href="/abduction/{{this.id}}/edit">Edit:</a>
         </div>
-        {{/if}}
+        {{!-- {{/if}} --}}
         <div class="block">
             <a href="/abduction/{{this.id}}/delete">Delete:</a>
         </div>
