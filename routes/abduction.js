@@ -50,7 +50,7 @@ router.post('/create', isLoggedIn, (req, res, next) => {
   let canEditDelete = true;
 
   Abduction
-    .create(abductionDetails ) //,{new: true} 
+    .create(abductionDetails )
     .then( abduction => {
       console.log(abduction);
       User.findById(abductionDetails.reporter)
@@ -64,7 +64,7 @@ router.post('/create', isLoggedIn, (req, res, next) => {
     })
 })
 
-router.get("/:abductionId", (req, res, next) => {
+router.get("/:abductionId",(req, res, next) => {
     Abduction
       .findById(req.params.abductionId)
       .populate("reporter")
@@ -74,13 +74,9 @@ router.get("/:abductionId", (req, res, next) => {
         if(req.session.user._id == abduction.reporter._id){
             canEditDelete = true;
         }
-        console.log("Inside Id-------", abduction.reporter._id)
-        console.log("Inside Id------2", req.session.user._id)
-        console.log("Inside Id------3", canEditDelete)
-        
         res.render("abduction/abduction-detail", {abduction, canEditDelete});
       })
-      .catch(err => (console.log("cant find the abduciton in the database", err)));
+      .catch(err => (console.log("cant find the abduction in the database", err)));
 });
 
 router.get("/:abductionId/edit", isLoggedIn,isCurrentUser,(req, res, next) => {
