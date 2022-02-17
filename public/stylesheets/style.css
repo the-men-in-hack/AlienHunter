@@ -231,6 +231,10 @@ h1 {
   padding-top: 15px;
 }
 
+.user-link {
+  color: aliceblue;
+}
+
 #map {
   height: 500px;
   width: 1325px;

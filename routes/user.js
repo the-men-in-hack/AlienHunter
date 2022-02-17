@@ -52,4 +52,21 @@ const userDetails = {
       })
 })
 
+//other Profile route
+
+router.get("/:userId/profile", isLoggedIn, (req, res, next) => {
+  
+  User
+    .findById(req.params.userId)
+    .then( (userDetails) => {
+      res.render("user/other-profile", userDetails);
+    })
+    .catch( err => {
+      console.log("Error getting user from DB...", err);
+    });
+});
+
+
+
+
 module.exports = router;
