@@ -1,19 +1,77 @@
 
-<h1>Create username and password to signup</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
 
-<form action="/auth/signup" method="POST">
-   <label> Username
-      <input type="text" name="username">
-   </label>
-   <label> Password
-      <input type="password" name="password">
-   </label>
+    </div>
+    <div class="col-md-auto">
+      <h4>Create username and password to signup</h4>
+    </div>
+    <div class="col-sm">
 
-   <button type="submit">Submit</button>
-</form>
+    </div>
+  </div>
+</div>
 
-{{#if errorMessage}}
-   {{errorMessage}}
-{{/if}}
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-md-auto">
+      <container class="form-container">
+        <form class="form" action="/auth/signup" method="POST">
+          <div class="mb-3">
+            <label for="username here" class="form-label">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              name="username"
+            />
+            <div id="emailHelp" class="form-text">This is going to be your name
+              on the website.</div>
+          </div>
+          <div class="mb-3">
+            <label
+              for="exampleInputPassword1"
+              class="form-label"
+            >Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="password"
+            />
+            <div id="passwordHelpBlock" class="form-text">Your password must be
+              at least 8 characters long</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </container>
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
+</div>
 
-Click <a href="/auth/login">here</a> to login.
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+
+    </div>
+    <div class="col-sm">
+      {{#if errorMessage}}
+        {{errorMessage}}
+      {{/if}}
+      <div class="signup-link">
+        Click
+        <a href="/auth/login">here</a>
+        to login.
+      </div>
+    </div>
+    <div class="col-sm">
+
+    </div>
+  </div>
+</div>
+

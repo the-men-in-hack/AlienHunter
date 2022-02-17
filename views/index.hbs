@@ -20,7 +20,7 @@
 <a class= "headerBtn addAbductionBtn" href="/abduction/create">ADD ABDUCTION</a>
 
 {{#each abductions}}
-<p> 
+<container class="posts-list"> 
     <div id="abductionForm">
         <div class="block">
             <label>Location (longitude/latitude):</label>{{this.location.coordinates.[0]}}/{{this.location.coordinates.[1]}}
@@ -53,6 +53,6 @@
             <a href="/abduction/{{this.id}}/delete">Delete:</a>
         </div>
     </div>
-</p>
+</container>
 {{/each}}
 

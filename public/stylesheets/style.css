@@ -35,7 +35,7 @@ img {
   padding: 0;
 }
 
-.btns{
+.userBtn{
   text-align: end;
 }
 
@@ -43,7 +43,25 @@ img {
   text-align: left;
 }
 
+.btn-primary {
+  color: #C6DE41;
+  background-color: #071C21;
+  border: none;
+}
+
+.signup-link {
+  margin-top: 30px;
+}
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+.form {
+  width: 100%;
+}
+
 a {
+  color: #C6DE41;
   text-decoration: none;
 }
 
