@@ -43,6 +43,10 @@ img {
   text-align: left;
 }
 
+a {
+  text-decoration: none;
+}
+
 .headerBtn,
   .headerBtn::after {
     padding: 16px 20px;
