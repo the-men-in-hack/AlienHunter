@@ -1,14 +1,18 @@
 
 <div class="container">
   <div class="row">
+
     <div class="col-sm">
 
     </div>
     <div class="col-md-auto">
-      <h4>Create username and password to signup</h4>
+        <div class="row">
+          <div>
+            <h4>Create username and password to signup</h4>
+          </div>
+        </div>
     </div>
     <div class="col-sm">
-
     </div>
   </div>
 </div>
@@ -48,6 +52,15 @@
               at least 8 characters long</div>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
+              <div class="col-sm">
+            </div>
+              {{#if errorMessage}}
+                <div class="error">
+                  {{errorMessage}}
+                </div>
+              {{/if}}
+              <div class="col-sm">
+              </div>
         </form>
       </container>
     </div>
@@ -59,12 +72,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-
     </div>
-    <div class="col-sm">
-      {{#if errorMessage}}
-        {{errorMessage}}
-      {{/if}}
       <div class="signup-link">
         Click
         <a href="/auth/login">here</a>
@@ -72,7 +80,6 @@
       </div>
     </div>
     <div class="col-sm">
-
     </div>
   </div>
 </div>

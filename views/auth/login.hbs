@@ -58,10 +58,14 @@
     <div class="col-sm">
 
     </div>
-    <div class="col-sm">
+
       {{#if errorMessage}}
-        {{errorMessage}}
+        <div class="error">
+          {{errorMessage}}
+        </div>
       {{/if}}
+      <div class="col-sm">
+      </div>
       <div class="signup-link">
         Click
         <a href="/auth/signup">here</a>
