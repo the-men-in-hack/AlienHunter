@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const Abduction = require("../models/Abduction.model");
+const User = require("../models/User.model");
+
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 const isCurrentUser = require("../middleware/isCurrentUser");
@@ -51,7 +53,11 @@ router.post('/create', isLoggedIn, (req, res, next) => {
     .create(abductionDetails ) //,{new: true} 
     .then( abduction => {
       console.log(abduction);
-      res.render("abduction/abduction-detail" , {abduction, canEditDelete});
+      User.findById(abductionDetails.reporter)
+      .then( reporter => {
+        abduction.reporter.username = reporter.username;
+        res.render("abduction/abduction-detail" , {abduction, canEditDelete});
+      })
     })
     .catch( err => {
       console.log('Error creating new abduction...', err);
