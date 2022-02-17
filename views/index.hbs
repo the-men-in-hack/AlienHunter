@@ -33,7 +33,7 @@
       <container class="posts-list"> 
      <div id="abductionForm">
         <div class="block">
-            <label>Location (longitude/latitude):</label>{{this.location.coordinates.[0]}}/{{this.location.coordinates.[1]}} <a href="javascript:newMarker( { lng: {{this.location.coordinates.[0]}}, lat: {{this.location.coordinates.[1]}} })" ">new marker</a>
+            <label>Location (longitude/latitude):</label>{{this.location.coordinates.[0]}}/{{this.location.coordinates.[1]}}
         </div> 
         <div class="block">
             <label>Location Name: </label><br>{{this.locationName}}
@@ -44,9 +44,10 @@
         <div class="block">
             <label>Reporter: </label><br>{{this.reporter.username}}
         </div>
-        
-        <div class="block details-btn"></div>
-            <a class="btn btn-primary" href="/abduction/{{this.id}}">Details</a>
+        <div class="col">
+                <div class="block details-btn"></div>
+                <a class="btn btn-primary" href="/abduction/{{this.id}}">Details</a>                <a class="btn btn-primary find-on-map"  data-longitude="42"href="javascript:newMarker( { lng: {{this.location.coordinates.[0]}}, lat: {{this.location.coordinates.[1]}} })">show on map</a>
+            </div>
         </div>
     </div>
     </container>
