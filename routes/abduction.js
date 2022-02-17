@@ -71,8 +71,8 @@ router.get("/:abductionId/edit", isLoggedIn,isCurrentUser,(req, res, next) => {
 });
 
 router.post("/:abductionId/edit", isLoggedIn, isCurrentUser, (req, res, next) => {
+  console.log("this is the time/date------", req.body.timeDate)
   const abductionId = req.params.abductionId;
-
   const abductionDetails = {
       
     location: {
