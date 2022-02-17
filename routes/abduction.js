@@ -22,6 +22,17 @@ router.get("/create", isLoggedIn, (req, res, next) => {
     
 router.post('/create', isLoggedIn, (req, res, next) => {
 
+  if (!req.body.longitude ||
+    !req.body.latitude ||
+    !req.body.locationName||
+    !req.body.timeDate ||
+    !req.body.description ||
+    !req.session.user._id) {
+      console.log("OUOOOOOUUUCHH");
+      res.render('abduction/abduction-new', { errorMessage: 'Please fill out all mandatory fields.' });
+      return;
+    }
+
   const abductionDetails = {
     location: {
         type: 'Point',
@@ -34,11 +45,13 @@ router.post('/create', isLoggedIn, (req, res, next) => {
     reporter: req.session.user._id,
   }
 
+  let canEditDelete = true;
+
   Abduction
     .create(abductionDetails )
     .then( abduction => {
       console.log(abduction);
-      res.render("abduction/abduction-detail", abduction);
+      res.render("abduction/abduction-detail" , {abduction, canEditDelete});
     })
     .catch( err => {
       console.log('Error creating new abduction...', err);
