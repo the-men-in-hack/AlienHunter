@@ -18,12 +18,13 @@
 <script type="text/javascript" src="../js/maps.js"></script>
 
 <a class= "headerBtn addAbductionBtn" href="/abduction/create">ADD ABDUCTION</a>
-
 {{#each abductions}}
 <container class="posts-list"> 
+
+
     <div id="abductionForm">
         <div class="block">
-            <label>Location (longitude/latitude):</label>{{this.location.coordinates.[0]}}/{{this.location.coordinates.[1]}}
+            <label>Location (longitude/latitude):</label>{{this.location.coordinates.[0]}}/{{this.location.coordinates.[1]}} <a href="javascript:newMarker( { lng: {{this.location.coordinates.[0]}}, lat: {{this.location.coordinates.[1]}} })" ">new marker</a>
         </div> 
         <div class="block">
             <label>Location Name: </label>{{this.locationName}}

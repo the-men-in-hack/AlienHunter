@@ -1,7 +1,8 @@
 
+
   function initMap() {
     //Styles a map in night mode.
-    const map = new google.maps.Map(document.getElementById("map"), {
+      const map = new google.maps.Map(document.getElementById("map"), {
       center: { lat: 38.500000, lng: -98.000000 },
       zoom: 5,
       disableDefaultUI: true,
@@ -93,24 +94,23 @@
           stylers: [{ color: "#17263c" }],
         },
       ],
-
-  
      });
-     var pos = new google.maps.LatLng(38.500000, -98.000000 );
+  //    var pos = new google.maps.LatLng(38.500000, -98.000000 );
 
-     var marker = new CustomMarker({
-       position: pos,
-       map: map,
-   });
+  //    var marker = new CustomMarker({
+  //      position: pos,
+  //      map: map,
+  //  });
 
-    const myMarker = new google.maps.Marker({
-      position: {
-        lat: 38.500000,
-        lng: -98.000000
-      },
-      map: map,
-      title: "I'm here"
-    });
+    // const myMarker = new google.maps.Marker({
+    //   position: {
+    //     lat: 38.500000,
+    //     lng: -98.000000
+    //   },
+    //   map: map,
+    //   title: "I'm here"
+    // });
+    return map;
   }
 
   CustomMarker.prototype = new google.maps.OverlayView();
@@ -125,14 +125,55 @@
       if (!div) {
           div = document.createElement('div');
           div.classList.add('pulse');
+
+          var point = this.getProjection().fromLatLngToDivPixel(this.position);
+           if (point) {
+               div.style.left = point.x + 'px';
+               div.style.top = point.y + 'px';
+           }
+
           var panes = this.getPanes();
           panes.overlayImage.appendChild(div);
       }
-      var point = this.getProjection().fromLatLngToDivPixel(this.position);
-      if (point) {
-          this.div.style.left = point.x + 'px';
-          this.div.style.top = point.y + 'px';
-      }
   };
 
-  initMap();
+  alienMap = initMap();
+
+  function newMarker(pos)
+  {
+    console.log("creating new marker");
+    
+    // const myMarker = new google.maps.Marker({
+    //   position: {
+    //     lat: 38.500000,
+    //     lng: -98.000000
+    //   },
+    //   map: alienMap,
+    //   title: "I'm here"
+    // });
+
+
+      //var pos = new google.maps.LatLng(lng, lat);
+
+      var marker = new CustomMarker({
+        //position:  {lat: 38, lng: -98},
+        position: pos,
+        map: alienMap,
+      })
+  };
+
+  function newUfoMarker(pos)
+  {
+
+      //var pos = new google.maps.LatLng(pos);
+
+      var marker = new CustomMarker({
+        //position:  {lat: 38, lng: -98},
+        position: pos,
+        map: alienMap,
+        title: "selected sight",
+        icon: "../images/ufo.png",
+        Animation: google.maps.Animation.BOUNCE,
+        draggable: true
+      })
+  };
