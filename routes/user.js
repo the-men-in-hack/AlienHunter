@@ -42,9 +42,6 @@ const userDetails = {
     country: req.body.country,
     alienDescription: req.body.alienDescription,
 }
-
-console.log(userDetails)
-
   User
       .findByIdAndUpdate(req.params.userId, userDetails)
       .then( user => {
