@@ -4,6 +4,8 @@
         Dark Light: #2D6E7E
         Light: #C6DE41 */
 
+        /* extra:#1f5663 */
+
 body {
   font-family: 'Roboto Condensed', sans-serif;
   padding: 50px;
@@ -32,6 +34,11 @@ body {
 .profile-col-first {
   padding: 50px;
   padding-right: 143px;
+}
+
+.row-abd {
+  background-color: #1f5663;
+  font-size: larger;
 }
 
 img {

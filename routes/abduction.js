@@ -47,12 +47,21 @@ router.post('/create', isLoggedIn, (req, res, next) => {
     })
 })
 
-router.get("/:abductionId", isLoggedIn, (req, res, next) => {
+router.get("/:abductionId", (req, res, next) => {
     Abduction
       .findById(req.params.abductionId)
       .populate("reporter")
       .then( (abduction) => {
-        res.render("abduction/abduction-detail", abduction);
+        let canEditDelete = false;
+        
+        if(req.session.user._id == abduction.reporter._id){
+            canEditDelete = true;
+        }
+        console.log("Inside Id-------", abduction.reporter._id)
+        console.log("Inside Id------2", req.session.user._id)
+        console.log("Inside Id------3", canEditDelete)
+        
+        res.render("abduction/abduction-detail", {abduction, canEditDelete});
       })
       .catch(err => (console.log("cant find the abduciton in the database", err)));
 });
