@@ -1,18 +1,16 @@
 const router = require("express").Router();
 const Abduction = require("../models/Abduction.model");
-const isLoggedOut = require("../middleware/isLoggedOut");
-const isLoggedIn = require("../middleware/isLoggedIn");
-const session = require("express-session");
 
 /* GET home page */
 
 router.get("/", (req, res, next) => {
-  let isUser;
   Abduction
     .find()
     .populate("reporter")
     .then(abductionsFromDB => {
-      res.render("index", {abductions: abductionsFromDB,});
+      // let dateFormat = abductionsFromDB[0].timeDate.toDateString();
+      // console.log("-------------------", dateFormat)
+      res.render("index", {abductions: abductionsFromDB});
     })
     .catch(err => console.log("no posts found in DB", err));
 });

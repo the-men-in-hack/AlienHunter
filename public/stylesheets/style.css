@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Roboto Condensed', sans-serif;
-  padding: 50px;
+  padding-left: 150px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: whitesmoke;
   background-color: #153B44;
@@ -38,7 +38,7 @@ body {
 
 .row-abd {
   background-color: #1f5663;
-  font-size: larger;
+  font-size: 18px;
 }
 
 img {
@@ -220,7 +220,7 @@ h1 {
 
 #map {
   height: 500px;
-  width: 100%;
+  width: 1325px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
  }
 

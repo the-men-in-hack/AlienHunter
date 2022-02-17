@@ -4,7 +4,7 @@
   <div class="row align-items-center row-abd">
     <div class="col-md-auto">
        {{#if abduction.pictures.[0]}}
-                {{#each pictures}}
+                {{#each abduction.pictures}}
                     <div class="block">
                         <img src="{{this}}" alt="Picture of abduction" width="200px" height="200px">
                     </div>
@@ -17,15 +17,19 @@
         <div class="block">
             <label>(longitude/latitude):</label><br>{{abduction.location.coordinates.[0]}} / {{abduction.location.coordinates.[1]}}
         </div> 
+        <br>
         <div class="block">
             <label>City: </label><br>{{abduction.locationName}}
-        </div> 
+        </div>
+        <br> 
         <div class="block">
             <label>Timestamp:</label><br>{{abduction.timeDate}}
         </div>
+        <br>
         <div class="block">
             <label>Reporter:</label><br>{{abduction.reporter.username}}
         </div>
+        <br>
          <div class="block">
             <label>Description:</label><br>{{abduction.description}}
         </div>
