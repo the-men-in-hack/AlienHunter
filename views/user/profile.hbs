@@ -1,17 +1,56 @@
-<h1>Hello,  {{username}}. Welcome to your profile!</h1>
 
 
-<img src="{{picture}}" alt="picture of the user" width="250" height="250">
-<h4>Username: {{username}}</h4>
-<h4>Firstname: {{firstname}}</h4>
-<h4>Lastname: {{lastname}}</h4>
-<h4>Age: {{age}}</h4>
-<h4>Country: {{country}}</h4>
-<h4>Hobby: {{hobby}}</h4>
-<h4>Have you been abducted? {{haveBeenAbducted}}</h4>
-<h4>Have you been probed? {{haveBeenProbed}}</h4>
-<h4>Where have you been probed? {{probeLocation}}</h4>
-<h4>What experiments did they do? {{experiments}}</h4>
-<h4>Please describe the Alien in detail? {{alienDescription}}</h4>
 
-<a href="/user/{{id}}/edit">Edit</a>
+<div class="container cont-abd">
+  <div class="row align-items-center row-abd">
+    <div class="col-md-auto profile-col-first">
+     <img src="{{picture}}" alt="picture of the user" width="250" height="250">
+    </div>
+    <div class="col profile-col-middle">
+    <div id="abductionForm">
+        <div class="block">
+            <h5><label>Username:</label><br>{{username}}</h5>
+        </div> 
+        <div class="block">
+            <h5><label>Firstname:</label><br>{{firstname}}</h5>
+        </div> 
+        <div class="block">
+            <h5><label>Lastname:</label><br>{{lastname}}</h5>
+        </div> 
+        <div class="block">
+            <h5><label>Age:</label><br>{{age}}</h5>
+        </div> 
+        <div class="block">
+            <h5><label>Country:</label><br>{{country}}</h5>
+        </div> 
+        <div class="block">
+            <h5><label>Interests:</label><br>{{hobby}}</h5>
+        </div> 
+            
+    </div>
+    
+    </div>
+    <div class="col profile-col-middle2">
+         <div class="block">
+            <h5><label>Have you been abducted?</label><br>{{haveBeenAbducted}}</h5>
+        </div> 
+        <div class="block">
+            <h5><label>Have you been probed?</label><br>{{haveBeenProbed}}</h5>
+        </div> 
+        <div class="block">
+            <h5><label>Where have you been probed? </label><br>{{probeLocation}}</h5>
+        </div> 
+        <div class="block">
+            <h5><label>What experiments did they do?</label><br>{{experiments}}</h5>
+        </div> 
+        <div class="block">
+            <h5><label>Please describe the Alien in detail:</label><br>{{alienDescription}}</h5>
+        </div>    
+    </div>
+    <div class="col">
+          <div class="block ">
+            <a class="btn btn-primary" href="/user/{{id}}/edit">Edit</a>
+        </div>
+    </div>
+  </div>
+</div>

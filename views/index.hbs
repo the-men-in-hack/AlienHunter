@@ -33,20 +33,20 @@
       <container class="posts-list"> 
     <div id="abductionForm">
         <div class="block">
-            <label>Location (longitude/latitude):</label>{{this.location.coordinates.[0]}}/{{this.location.coordinates.[1]}}
+            <label>Location (longitude/latitude):</label><br>{{this.location.coordinates.[0]}}/{{this.location.coordinates.[1]}}
         </div> 
         <div class="block">
-            <label>Location Name: </label>{{this.locationName}}
+            <label>Location Name: </label><br>{{this.locationName}}
         </div> 
         <div class="block">
-            <label>Time/Date: </label>{{this.timeDate}}
+            <label>Time/Date: </label><br>{{this.timeDate}}
         </div>
         <div class="block">
-            <label>Reporter: </label>{{this.reporter.username}}
+            <label>Reporter: </label><br>{{this.reporter.username}}
         </div>
         
-        <div class="block"></div>
-            <a href="/abduction/{{this.id}}">Details</a>
+        <div class="block details-btn"></div>
+            <a class="btn btn-primary" href="/abduction/{{this.id}}">Details</a>
         </div>
     </div>
     </container>

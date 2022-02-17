@@ -100,7 +100,7 @@ router.get("/:abductionId/delete", isLoggedIn, isCurrentUser, (req, res, next) =
       Abduction
       .findByIdAndDelete(req.params.abductionId)
       .then(() => {
-        res.redirect("./");
+        res.redirect("/");
     })
       .catch(err => {
       console.log("Error deleting abduction...", err);

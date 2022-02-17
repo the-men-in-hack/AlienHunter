@@ -1,33 +1,46 @@
-<p> 
-    <div id="abductionForm">
-        <div class="block">
-            <label>Location (longitude/latitude):</label> {{location.coordinates.[0]}}/{{location.coordinates.[1]}}
-        </div>
-        <div class="block">
-            <label>Location Name:</label>{{locationName}}
-        </div>
-        <div class="block">
-            <label>Time/Date:</label>{{timeDate}}
-        </div>
-        <div class="block">
-            <label>Reporter:</label>{{reporter.username}}
-        </div>
-        <div class="block">
-            <label>Description:</label>{{description}}
-        </div>
-        {{#if pictures.[0]}}
+
+
+<div class="container cont-abd">
+  <div class="row align-items-center row-abd">
+    <div class="col-md-auto">
+       {{#if pictures.[0]}}
                 {{#each pictures}}
                     <div class="block">
-                        <img src="{{this}}" alt="Picture of abduction" width="500" height="600">
+                        <img src="{{this}}" alt="Picture of abduction" width="200px" height="200px">
                     </div>
                 {{/each}}
         {{/if}}
-          <div class="block">
-            <a href="/abduction/{{this.id}}/edit">Edit:</a>
+    </div>
+    <div class="col-md-auto">
+      <container class="posts-list"> 
+    <div id="abductionForm">
+        <div class="block">
+            <label>(longitude/latitude):</label><br>{{this.location.coordinates.[0]}} / {{this.location.coordinates.[1]}}
+        </div> 
+        <div class="block">
+            <label>City: </label><br>{{this.locationName}}
+        </div> 
+        <div class="block">
+            <label>Timestamp:</label><br>{{this.timeDate}}
         </div>
         <div class="block">
-            <a href="/abduction/{{this.id}}/delete">Delete:</a>
+            <label>Reporter:</label><br>{{this.reporter.username}}
+        </div>
+         <div class="block">
+            <label>Description:</label><br>{{description}}
+        </div>
+        
+       
+    </div>
+    </container>
+    </div>
+    <div class="col">
+          <div class="block">
+            <a class="btn btn-primary" href="/abduction/{{this.id}}/edit">Edit</a>
+        </div>
+        <div class="block">
+            <a class="btn btn-primary" href="/abduction/{{this.id}}/delete">Delete</a>
         </div>
     </div>
-</p>
-
+  </div>
+</div>
