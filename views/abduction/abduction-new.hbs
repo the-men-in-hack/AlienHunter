@@ -59,7 +59,7 @@
               id="datetimepicker1"
             >Date:</label>
             <input
-              type="date"
+              type="datetime-local"
               class="form-control"
               name="timeDate"
               required
@@ -96,6 +96,15 @@
             Please provide a clear picture if possible
           </div>
           <button type="submit" class="btn btn-primary">Send</button>
+            <div class="col-sm">
+            </div>
+              {{#if errorMessage}}
+                <div class="error">
+                  {{errorMessage}}
+                </div>
+              {{/if}}
+              <div class="col-sm">
+              </div>
         </form>
       </container>
     </div>
