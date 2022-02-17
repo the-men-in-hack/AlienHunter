@@ -35,8 +35,9 @@
               class="form-control"
               value="{{this.location.coordinates.[1]}}"
               required
+              name="latitude"
             />
-            <div id="emailHelp" class="form-text"></div>
+            <div id="positionHelp" class="form-text"></div>
           </div>
           
           <div class="mb-3">
@@ -52,18 +53,17 @@
               value="{{locationName}}"
               required
             />
-            <div id="passwordHelpBlock" class="form-text"></div>
+            <div id="locationNameHelpBlock" class="form-text"></div>
             Tell us where you had the encounter
           </div>
           
           <div class="mb-3">
             <label
               class="form-label"
-            >Time / Date:</label>
+            >Date:</label>
             <input
               type="date"
               class="form-control"
-              id="exampleInputPassword1"
               name="timeDate"
               value="{{timeDate}}"
               required
@@ -84,7 +84,7 @@
               value="{{description}}"
               required
             />
-            <div id="passwordHelpBlock" class="form-text"></div>
+            <div id="descriptionHelpBlock" class="form-text"></div>
             Tell us all about the encounter
           </div>
           
@@ -99,7 +99,7 @@
               name="pictures"
               value="{{pictures}}"
             />
-            <div id="passwordHelpBlock" class="form-text"></div>
+            <div id="picturesHelpBlock" class="form-text"></div>
             Please profide a clear picture if possible
           </div>
           <button type="submit" class="btn btn-primary">Send</button>

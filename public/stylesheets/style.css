@@ -4,6 +4,8 @@
         Dark Light: #2D6E7E
         Light: #C6DE41 */
 
+        /* extra:#1f5663 */
+
 body {
   font-family: 'Roboto Condensed', sans-serif;
   padding: 50px;
@@ -32,6 +34,11 @@ body {
 .profile-col-first {
   padding: 50px;
   padding-right: 143px;
+}
+
+.row-abd {
+  background-color: #1f5663;
+  font-size: larger;
 }
 
 img {
@@ -65,8 +72,9 @@ label {
   padding: 0;
 }
 
-.userBtn{
+.user-Btn{
   text-align: end;
+  padding-left: 1rem;
 }
 
 .details-btn {
@@ -205,47 +213,10 @@ a {
    transform: translate(0);
   }
  }
- 
-.userBtn {
-  padding-left: 1rem;
-}
-a {
-  color: #00b7ff;
-}
 
 h1 {
   color: 15px;
 }
-/* 
-#abductionForm {
-  display: flex;
-  justify-content: left;
-  flex-wrap: wrap;
-  flex-direction: column;
-} */
-
-/* #leftForm {
-  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
-  width: 10vw;
-}
-
-#rightForm {
-  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
-  width: 30vw;
-}
-
-label {
-  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
-  border-top: 5px;
-}
-
-input {
-  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
-} */
-
-/* .block {
-  width: 300px;
-}*/
 
 #map {
   height: 500px;

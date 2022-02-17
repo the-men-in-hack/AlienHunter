@@ -121,22 +121,23 @@ router.post("/login", isLoggedOut, (req, res, next) => {
       }
 
       // If user is found based on the username, check if the in putted password matches the one saved in the database
-      bcrypt.compare(password, user.password).then((isSamePassword) => {
+      bcrypt
+        .compare(password, user.password)
+        .then((isSamePassword) => {
         if (!isSamePassword) {
           return res
             .status(400)
             .render("auth/login", { errorMessage: "Wrong credentials." });
         }
-        req.session.user = user;
+            req.session.user = user;
         // req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
-        return res.redirect("../");
-      });
-    })
-
-    .catch((err) => {
+            return res.redirect("../");
+          });
+        })
+        .catch((err) => {
       // in this case we are sending the error handling to the error handling middleware that is defined in the error handling file
       // you can just as easily run the res.status that is commented out below
-      next(err);
+        next(err);
       // return res.status(500).render("login", { errorMessage: err.message });
     });
 });

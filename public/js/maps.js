@@ -81,7 +81,7 @@
         {
           featureType: "water",
           elementType: "geometry",
-          stylers: [{ color: "#153B44" }],
+          stylers: [{ color: "#1f5663" }],
         },
         {
           featureType: "water",

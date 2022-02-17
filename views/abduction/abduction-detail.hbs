@@ -3,7 +3,7 @@
 <div class="container cont-abd">
   <div class="row align-items-center row-abd">
     <div class="col-md-auto">
-       {{#if pictures.[0]}}
+       {{#if abduction.pictures.[0]}}
                 {{#each pictures}}
                     <div class="block">
                         <img src="{{this}}" alt="Picture of abduction" width="200px" height="200px">
@@ -15,32 +15,34 @@
       <container class="posts-list"> 
     <div id="abductionForm">
         <div class="block">
-            <label>(longitude/latitude):</label><br>{{this.location.coordinates.[0]}} / {{this.location.coordinates.[1]}}
+            <label>(longitude/latitude):</label><br>{{abduction.location.coordinates.[0]}} / {{abduction.location.coordinates.[1]}}
         </div> 
         <div class="block">
-            <label>City: </label><br>{{this.locationName}}
+            <label>City: </label><br>{{abduction.locationName}}
         </div> 
         <div class="block">
-            <label>Timestamp:</label><br>{{this.timeDate}}
+            <label>Timestamp:</label><br>{{abduction.timeDate}}
         </div>
         <div class="block">
-            <label>Reporter:</label><br>{{this.reporter.username}}
+            <label>Reporter:</label><br>{{abduction.reporter.username}}
         </div>
          <div class="block">
-            <label>Description:</label><br>{{description}}
+            <label>Description:</label><br>{{abduction.description}}
         </div>
         
        
     </div>
     </container>
     </div>
+    {{#if canEditDelete}}
     <div class="col">
           <div class="block">
-            <a class="btn btn-primary" href="/abduction/{{this.id}}/edit">Edit</a>
+            <a class="btn btn-primary" href="/abduction/{{abduction._id}}/edit">Edit</a>
         </div>
         <div class="block">
-            <a class="btn btn-primary" href="/abduction/{{this.id}}/delete">Delete</a>
+            <a class="btn btn-primary" href="/abduction/{{abduction._id}}/delete">Delete</a>
         </div>
     </div>
+    {{/if}}
   </div>
 </div>
