@@ -1,26 +1,36 @@
-{{!-- <h1>{{title}}</h1>
-<p>Welcome to the alien hunters database.</p> --}}
 
-
-{{!-- {{#if session.user}}
-
- <a href="/abduction">Home</a>
-
-{{else}}
-
-<a href="/auth/signup">Signup</a> | <a href="/auth/login">Login</a> 
-
-{{/if}} --}}
 
 <div id="map"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key={{maps_api_key}}"></script>
 <script type="text/javascript" src="../js/maps.js"></script>
 
-<a class= "headerBtn addAbductionBtn" href="/abduction/create">ADD ABDUCTION</a>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">    
+    </div>
+    <div class="col-sm">
+      <a class= "headerBtn addAbductionBtn" href="/abduction/create">ADD ABDUCTION</a>
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
+</div>
 
 {{#each abductions}}
-<container class="posts-list"> 
+<div class="container cont-abd">
+  <div class="row align-items-center row-abd">
+    <div class="col">
+      {{!-- {{#each this.pictures}} --}}
+        {{!-- {{#if this.pictures}} --}}
+        <div class="block">
+            <img src="{{this.pictures}}" alt="Picture of abduction" width="200" height="250">
+        </div>
+        {{!-- {{/if}} --}}
+        {{!-- {{/each}} --}}
+    </div>
+    <div class="col">
+      <container class="posts-list"> 
     <div id="abductionForm">
         <div class="block">
             <label>Location (longitude/latitude):</label>{{this.location.coordinates.[0]}}/{{this.location.coordinates.[1]}}
@@ -34,25 +44,16 @@
         <div class="block">
             <label>Reporter: </label>{{this.reporter.username}}
         </div>
-        {{#each this.pictures}}
-        {{#if this.pictures}}
-        <div class="block">
-            <img src="{{this.pictures}}" alt="Picture of abduction" width="200" height="250">
-        </div>
-        {{/if}}
-        {{/each}}
+        
         <div class="block"></div>
             <a href="/abduction/{{this.id}}">Details</a>
         </div>
-        {{!-- {{#if isUser}} --}}
-        <div class="block">
-            <a href="/abduction/{{this.id}}/edit">Edit:</a>
-        </div>
-        {{!-- {{/if}} --}}
-        <div class="block">
-            <a href="/abduction/{{this.id}}/delete">Delete:</a>
-        </div>
     </div>
-</container>
+    </container>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>
 {{/each}}
 

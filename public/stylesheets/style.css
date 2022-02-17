@@ -24,9 +24,16 @@ img {
   margin: 0;
 }
 
+.cont-abd {
+  margin-top: 50px;
+  border-bottom: #071C21 2px solid;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;;
+}
+
 .row {
   padding: 0.5rem 0rem 0.5rem 0rem;
   margin: 0px;
+ 
   /* background-color: #2D6E7E; */
 }
 
@@ -41,6 +48,11 @@ img {
 
 .logo{
   text-align: left;
+}
+
+.posts-list {
+  text-align: left;
+
 }
 
 .btn-primary {
@@ -204,6 +216,7 @@ input {
 #map {
   height: 500px;
   width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
  }
 
 .pulse {
