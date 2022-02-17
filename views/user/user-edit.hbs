@@ -1,57 +1,198 @@
-<p> 
-    <div id="abductionForm">
-        <div>
-            <form action="/user/{{id}}/edit" method="post"> 
-            <div class="block">
-                <label>Username: </label><input type="text" name="username" value="{{username}}"></input>
-            </div>
-            <div class="block">
-                <label>Firstname:</label><input type="text" name="firstname" value="{{firstname}}"></input>
-            </div>
-            <div class="block">
-                <label>Lastname</label><input type="text" name="lastname" value="{{lastname}}"></input>
-            </div>
-            <div class="block">
-                <label>Age:</label><input type="number" name="age" value="{{age}}"></input>
-            </div>
-            <div class="block">
-                <label>Country:</label><input type="text" name="country" value="{{country}}"></input>
-            </div>
-            <div class="block">
-                <label>Hobby:</label><input type="text" name="hobby" value="{{hobby}}"></input>
-            </div>
-            <div class="block">
-                <label>Have you been abducted? </label>
-                <select id="yes or no" name="haveBeenAbducted">
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
-            </div>
 
-            <div class="block">
-                <label>Have you been probed? </label>
-                <select id="yes or no" name="haveBeenProbed">
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
-            </div>
-            <div class="block">
-                <label>Where have you been probed?</label><input type="text" name="probeLocation" value="{{probeLocation}}"></input>
-            </div>
-            <div class="block">
-                <label>What experiments did they do?</label><input type="text" name="experiments" value="{{experiments}}"></input>
-            </div>
-            <div class="block">
-                <label>Please describe the Alien in detail?</label><input type="text" name="alienDescription" value="{{alienDescription}}"></input>
-            </div>
-            <div class="block">
-                <label>picture:</label><input type="text" name="picture" ></input>
-            </div>
-            <div class="block">
-                <button>send</button>
-            </div>
-            </form>
-        </div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+
     </div>
-</p>
+    <div class="col-sm">
+      <h4>Here you can edit your profile</h4>
+    </div>
+    <div class="col-sm">
 
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-md-auto">
+      <container class="form-container">
+        <form class="form" action="/user/{{id}}/edit" method="POST">
+          
+          <div class="mb-3">
+            <label for="username here" class="form-label">Username:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="username"
+              value="{{username}}"
+            />
+
+            <div id="emailHelp" class="form-text"></div>
+          </div>
+          
+          <div class="mb-3">
+            <label
+              for="exampleInputPassword1"
+              class="form-label"
+            >Firstname:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="firstname"
+              value="{{firstname}}"
+            />
+            <div id="passwordHelpBlock" class="form-text"></div>
+          </div>
+          
+          <div class="mb-3">
+            <label
+              class="form-label"
+            >Lastname:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="lastname"
+              value="{{lastname}}"
+            />
+            <div id="passwordHelpBlock" class="form-text"></div>
+          </div>
+          
+          <div class="mb-3">
+            <label
+              class="form-label"
+            >Age:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="age"
+              value="{{age}}"
+            />
+            <div id="passwordHelpBlock" class="form-text"></div>
+          </div>
+          
+          <div class="mb-3">
+            <label
+              class="form-label"
+            >Country:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="country"
+              value="{{country}}"
+            />
+            <div id="passwordHelpBlock" class="form-text"></div>
+          </div>
+          
+          <div class="mb-3">
+            <label
+              class="form-label"
+            >Hobby:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="hobby"
+              value="{{hobby}}"
+            />
+            <div id="passwordHelpBlock" class="form-text"></div>
+          </div>
+          
+          <div class="mb-3">
+            <label
+              class="form-label"
+            >Have you been abducted?</label>
+           <select class="form-select" aria-label="Default select example" name="haveBeenAbducted">
+                <option selected>Open this select menu</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+                
+            <div id="passwordHelpBlock" class="form-text"></div>
+            Please choose "yes" or "No"
+          </div>
+          
+          <div class="mb-3">
+            <label
+              class="form-label"
+            >Have you been probed?</label>
+           <select class="form-select" aria-label="Default select example" name="haveBeenProbed">
+                <option selected>Open this select menu</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+                
+            <div id="passwordHelpBlock" class="form-text"></div>
+            Please choose "yes" or "No"
+          </div>
+
+          <div class="mb-3">
+            <label
+              class="form-label"
+            >Where have you been probed?</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="probeLocation"
+              value="{{probeLocation}}"
+            />
+            <div id="passwordHelpBlock" class="form-text"></div>
+          </div>
+          
+          <div class="mb-3">
+            <label
+              class="form-label"
+            >What experiments did they do?</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="experiments"
+              value="{{experiments}}"
+            />
+            <div id="passwordHelpBlock" class="form-text"></div>
+          </div>
+          
+          <div class="mb-3">
+            <label
+              class="form-label"
+            >Please describe the Alien in detail?</label>
+            <input
+              type="text"
+              class="form-control"
+              name="alienDescription"
+              value="{{alienDescription}}"
+            />
+            <div id="alienDescriptionHelpBlock" class="form-text"></div>
+          </div>
+          
+          <div class="mb-3">
+            <label
+              class="form-label"
+            >Add your picture here:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="picture"
+              value="{{picture}}"
+            />
+            <div id="alienDescriptionHelpBlock" class="form-text"></div>
+          </div>
+
+
+
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </container>
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
+</div>

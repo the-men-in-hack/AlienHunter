@@ -71,8 +71,8 @@ router.get("/:abductionId/edit", isLoggedIn,isCurrentUser,(req, res, next) => {
 });
 
 router.post("/:abductionId/edit", isLoggedIn, isCurrentUser, (req, res, next) => {
+  console.log("this is the time/date------", req.body.timeDate)
   const abductionId = req.params.abductionId;
-
   const abductionDetails = {
       
     location: {
@@ -100,7 +100,7 @@ router.get("/:abductionId/delete", isLoggedIn, isCurrentUser, (req, res, next) =
       Abduction
       .findByIdAndDelete(req.params.abductionId)
       .then(() => {
-        res.redirect("./");
+        res.redirect("/");
     })
       .catch(err => {
       console.log("Error deleting abduction...", err);

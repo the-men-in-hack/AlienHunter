@@ -1,37 +1,107 @@
-<p> 
-    <div id="abductionForm">
-        <div>
-            <form action="/abduction/{{id}}/edit" method="post">
 
-                <div class="block">
-                    <label>Location (latitude/longitude):</label><input type="text" name="longitude" value="{{this.location.coordinates.[0]}}"></input><input type="text" value="{{this.location.coordinates.[1]}}"></input>
-                </div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
 
-                <div class="block">
-                    <label>Location Name:</label><input type="text" name="locationName" value="{{locationName}}"></input>
-                </div>
-
-                    <div class="block"><label>Date:</label><input type="date" name="TimeDate" value={{timeDate}}></input>
-                </div>
-
-                {{!-- <div class="block">
-                    <label>Reporter:</label><input type="text" name="User" value={{reporter.username}}></input>
-                </div> --}}
-
-                <div class="block">
-                    <label>description:</label><input type="text" name="description" value="{{description}}"></input>
-                </div>
-                
-                <div class="block">
-                    <label>pictures:</label><input type="text" name="pictures" ></input>
-                </div>
-                
-                <div class="block">
-                    <button>send</button>
-                </div>
-
-            </form>
-        </div>
     </div>
-</p>
+    <div class="col-sm">
+      <h4>Here you can edit your posts</h4>
+    </div>
+    <div class="col-sm">
 
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-md-auto">
+      <container class="form-container">
+        <form class="form" action="/abduction/{{id}}/edit" method="POST">
+          
+          <div class="mb-3">
+            <label for="username here" class="form-label">(latitude/longitude)</label>
+            <input
+              type="text"
+              class="form-control"
+              name="longitude"
+              value="{{this.location.coordinates.[0]}}"
+            />
+            <input
+              type="text"
+              class="form-control"
+              value="{{this.location.coordinates.[1]}}"
+            />
+            <div id="emailHelp" class="form-text"></div>
+          </div>
+          
+          <div class="mb-3">
+            <label
+              for="exampleInputPassword1"
+              class="form-label"
+            >City:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="locationName"
+              value="{{locationName}}"
+            />
+            <div id="passwordHelpBlock" class="form-text"></div>
+            Tell us where you had the encounter
+          </div>
+          
+          <div class="mb-3">
+            <label
+              class="form-label"
+            >Time / Date:</label>
+            <input
+              type="date"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="timeDate"
+              value="{{timeDate}}"
+            />
+            <div id="passwordHelpBlock" class="form-text"></div>
+            Tell us when you had the encounter
+          </div>
+          
+          <div class="mb-3">
+            <label
+              class="form-label"
+            >Description:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="description"
+              value="{{description}}"
+            />
+            <div id="passwordHelpBlock" class="form-text"></div>
+            Tell us all about the encounter
+          </div>
+          
+          <div class="mb-3">
+            <label
+              class="form-label"
+            >Picture:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="pictures"
+              value="{{pictures}}"
+            />
+            <div id="passwordHelpBlock" class="form-text"></div>
+            Please profide a clear picture if possible
+          </div>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </container>
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
+</div>
