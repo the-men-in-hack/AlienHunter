@@ -27,9 +27,9 @@
     </div>
     <div class="col">
       <container class="posts-list"> 
-    <div id="abductionForm">
+     <div id="abductionForm">
         <div class="block">
-            <label>Location (longitude/latitude):</label><br>{{this.location.coordinates.[0]}}/{{this.location.coordinates.[1]}}
+            <label>Location (longitude/latitude):</label>{{this.location.coordinates.[0]}}/{{this.location.coordinates.[1]}} <a href="javascript:newMarker( { lng: {{this.location.coordinates.[0]}}, lat: {{this.location.coordinates.[1]}} })" ">new marker</a>
         </div> 
         <div class="block">
             <label>Location Name: </label><br>{{this.locationName}}
