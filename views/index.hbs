@@ -47,7 +47,8 @@
         </div>
         <div class="col">
                 <div class="block details-btn"></div>
-                <a class="btn btn-primary" href="/abduction/{{this._id}}">Details</a>                <a class="btn btn-primary find-on-map" onclick="topFunction()" data-longitude="42"href="javascript:newMarker( { lng: {{this.location.coordinates.[0]}}, lat: {{this.location.coordinates.[1]}} })">show on map</a>
+                <a class="btn btn-primary" href="/abduction/{{this._id}}">Details</a>
+                <div class="btn btn-primary find-on-map" onclick="topFunction(this)" data-longitude="{{this.location.coordinates.[0]}}" data-latitude="{{this.location.coordinates.[1]}}">show on map</div>
             </div>
         </div>
     </div>

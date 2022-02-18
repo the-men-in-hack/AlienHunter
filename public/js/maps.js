@@ -3,7 +3,7 @@
   function initMap() {
     //Styles a map in night mode.
       const map = new google.maps.Map(document.getElementById("map"), {
-      center: { lat: 38.500000, lng: -98.000000 },
+      center: { lat: 47.36667, lng: 8.55},
       zoom: 5,
       disableDefaultUI: true,
       styles: [
@@ -40,43 +40,43 @@
         {
           featureType: "road",
           elementType: "geometry",
-          stylers: [{ color: "#38414e" }],
+          stylers: [{ color: "#38414e",visibility: "off" }],
         },
         {
           featureType: "road",
           elementType: "geometry.stroke",
-          stylers: [{ color: "#212a37" }],
+          stylers: [{ color: "#212a37" ,visibility: "off" }]
         },
         {
           featureType: "road",
           elementType: "labels.text.fill",
-          stylers: [{ color: "#9ca5b3" }],
+          stylers: [{ color: "#9ca5b3",visibility: "off"  }],
         },
         {
           featureType: "road.highway",
           elementType: "geometry",
-          stylers: [{ color: "#746855" }],
+          stylers: [{ color: "#746855",visibility: "off"  }],
         },
         {
           featureType: "road.highway",
           elementType: "geometry.stroke",
-          stylers: [{ color: "#1f2835" }],
+          stylers: [{ color: "#1f2835",visibility: "off"  }],
         },
         {
           featureType: "road.highway",
           elementType: "labels.text.fill",
-          stylers: [{ color: "#f3d19c" }],
+          stylers: [{ color: "#f3d19c",visibility: "off"  }],
         },
         {
           featureType: "transit",
           elementType: "geometry",
-          stylers: [{ color: "#2f3948" }],
+          stylers: [{ color: "#2f3948",visibility: "off"  }],
         },
         {
           featureType: "transit.station",
           elementType: "labels.text.fill",
-          stylers: [{ color: "#EFEFEF" }],
-          stylers: [{ color: "#d59563" }],
+          stylers: [{ color: "#EFEFEF",visibility: "off"  }],
+          // stylers: [{ color: "#d59563" }],
         },
         {
           featureType: "water",
@@ -120,6 +120,7 @@
   }
   
   CustomMarker.prototype.draw = function() {
+
       var self = this;
       var div = this.div;
       if (!div) {
@@ -135,9 +136,11 @@
           var panes = this.getPanes();
           panes.overlayImage.appendChild(div);
       }
+
   };
 
   alienMap = initMap();
+  var IncidentMarker = false;
 
   function newMarker(pos)
   {
@@ -155,11 +158,14 @@
 
       //var pos = new google.maps.LatLng(lng, lat);
 
-      var marker = new CustomMarker({
-        //position:  {lat: 38, lng: -98},
-        position: pos,
-        map: alienMap,
-      })
+
+
+          new marker = new CustomMarker({
+          //position:  {lat: 38, lng: -98},
+          position: pos,
+          map: alienMap,
+        });
+
   };
 
   function newUfoMarker(pos)
@@ -177,3 +183,18 @@
         draggable: true
       })
   };
+
+  //scroll to top
+
+function topFunction(identifier) {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+  var lat = parseFloat(identifier.getAttribute('data-latitude'));
+  var long = parseFloat(identifier.getAttribute('data-longitude'));
+  const center = new google.maps.LatLng(lat, long);
+
+  alienMap.panTo(center);
+
+  newMarker(center);
+}
