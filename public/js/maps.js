@@ -133,10 +133,17 @@
                div.style.top = point.y + 40 + 'px';
            }
 
-          var panes = this.getPanes();
+          panes = this.getPanes();
           panes.overlayImage.appendChild(div);
       }
   };
+
+  CustomMarker.prototype.onRemove = function() {
+    if (this.div) {
+      this.div.parentNode.removeChild(this.div);
+      delete this.div;
+    }
+  }
 
   alienMap = initMap();
 
@@ -192,14 +199,22 @@ function topFunction(identifier) {
   //alienMap.panTo(center);
   alienMap.setCenter(center);
 
-  var oldMarkers = document.getElementsByClassName("pulse");
 
+  var oldMarkers = document.getElementsByClassName("pulse");
 
     for (var i = 0; i < oldMarkers.length ; i++)
     {
       oldMarkers[i].parentNode.removeChild(oldMarkers[i]);
     }
 
-  //alientMap.setMap(null);
-  newMarker(center);
+    const myMarker = new google.maps.Marker({
+      position: center,
+      map: alienMap,
+      title: "I'm here",
+      icon: "../images/ufo.png",
+      Animation: google.maps.Animation.BOUNCE,
+      //draggable: true
+    });
+
+  //newUfoMarker(center);
 }
