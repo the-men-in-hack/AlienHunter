@@ -8,8 +8,6 @@ router.get("/", (req, res, next) => {
     .find()
     .populate("reporter")
     .then(abductionsFromDB => {
-      // let dateFormat = abductionsFromDB[0].timeDate.toDateString();
-      // console.log("-------------------", dateFormat)
       res.render("index", {abductions: abductionsFromDB});
     })
     .catch(err => console.log("no posts found in DB", err));

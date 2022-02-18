@@ -31,7 +31,9 @@
               required
             />
 
-            <div id="emailHelp" class="form-text"></div>
+            <div id="Help" class="form-text">
+              This changes your login name
+            </div>
           </div>
           
           <div class="mb-3">
@@ -42,12 +44,11 @@
             <input
               type="text"
               class="form-control"
-              id="exampleInputPassword1"
               name="firstname"
               value="{{firstname}}"
               required
             />
-            <div id="passwordHelpBlock" class="form-text"></div>
+            <div id="HelpBlock" class="form-text"></div>
           </div>
           
           <div class="mb-3">
@@ -57,12 +58,11 @@
             <input
               type="text"
               class="form-control"
-              id="exampleInputPassword1"
               name="lastname"
               value="{{lastname}}"
               required
             />
-            <div id="passwordHelpBlock" class="form-text"></div>
+            <div id="HelpBlock" class="form-text"></div>
           </div>
           
           <div class="mb-3">
@@ -72,11 +72,10 @@
             <input
               type="text"
               class="form-control"
-              id="exampleInputPassword1"
               name="age"
               value="{{age}}"
             />
-            <div id="passwordHelpBlock" class="form-text"></div>
+            <div id="HelpBlock" class="form-text"></div>
           </div>
           
           <div class="mb-3">
@@ -86,11 +85,10 @@
             <input
               type="text"
               class="form-control"
-              id="exampleInputPassword1"
               name="country"
               value="{{country}}"
             />
-            <div id="passwordHelpBlock" class="form-text"></div>
+            <div id="HelpBlock" class="form-text"></div>
           </div>
           
           <div class="mb-3">
@@ -100,11 +98,10 @@
             <input
               type="text"
               class="form-control"
-              id="exampleInputPassword1"
               name="hobby"
               value="{{hobby}}"
             />
-            <div id="passwordHelpBlock" class="form-text"></div>
+            <div id="HelpBlock" class="form-text"></div>
           </div>
           
           <div class="mb-3">
@@ -112,13 +109,14 @@
               class="form-label"
             >Have you been abducted?</label>
            <select class="form-select" aria-label="Default select example" name="haveBeenAbducted">
-                <option selected>Open this select menu</option>
+                <option value="No" selected>No</option>
                 <option value="Yes">Yes</option>
-                <option value="No">No</option>
             </select>
                 
-            <div id="passwordHelpBlock" class="form-text"></div>
-            Please choose "yes" or "No"
+            <div id="Help" class="form-text">
+              Please choose "yes" or "No"
+            </div>
+            
           </div>
           
           <div class="mb-3">
@@ -126,13 +124,11 @@
               class="form-label"
             >Have you been probed?</label>
            <select class="form-select" aria-label="Default select example" name="haveBeenProbed">
-                <option selected>Open this select menu</option>
+                <option value="No" selected>No</option>
                 <option value="Yes">Yes</option>
-                <option value="No">No</option>
             </select>
                 
-            <div id="passwordHelpBlock" class="form-text"></div>
-            Please choose "yes" or "No"
+            <div id="HelpBlock" class="form-text">Please choose "yes" or "No"</div> 
           </div>
 
           <div class="mb-3">
@@ -166,7 +162,7 @@
           <div class="mb-3">
             <label
               class="form-label"
-            >Please describe the Alien in detail?</label>
+            >Describe the Alien in detail</label>
             <input
               type="text"
               class="form-control"
@@ -186,7 +182,8 @@
               name="picture"
               value="{{picture}}"
             />
-            <div id="alienDescriptionHelpBlock" class="form-text"></div>
+            <div id="alienDescriptionHelpBlock" class="form-text">
+            </div>
           </div>
 
 

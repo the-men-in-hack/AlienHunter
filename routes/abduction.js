@@ -70,10 +70,11 @@ router.get("/:abductionId",(req, res, next) => {
       .populate("reporter")
       .then( (abduction) => {
         let canEditDelete = false;
-        
+        if(req.session.user){
         if(req.session.user._id == abduction.reporter._id){
             canEditDelete = true;
         }
+       }
         res.render("abduction/abduction-detail", {abduction, canEditDelete});
       })
       .catch(err => (console.log("cant find the abduction in the database", err)));
