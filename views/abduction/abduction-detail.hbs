@@ -3,13 +3,13 @@
 <div class="container cont-abd">
   <div class="row align-items-center row-abd">
     <div class="col-md-auto">
-       {{#if abduction.pictures.[0]}}
+    
                 {{#each abduction.pictures}}
                     <div class="block">
-                        <img src="{{this}}" alt="Picture of abduction" width="200px" height="200px">
+                        <img class="img-placeholder" src="{{this}}"  >
                     </div>
                 {{/each}}
-        {{/if}}
+        
     </div>
     <div class="col-md-auto">
       <container class="posts-list"> 
