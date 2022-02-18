@@ -41,6 +41,11 @@ body {
   font-size: 18px;
 }
 
+.description{
+  width: 600px;
+  overflow-wrap: break-word;
+}
+
 .img-placeholder {
   padding: 0;
   margin: 0;
