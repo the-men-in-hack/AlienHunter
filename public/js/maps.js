@@ -119,8 +119,9 @@
       this.setValues(opts);
   }
   
-  CustomMarker.prototype.draw = function() {
+  var markerSet = false;
 
+  CustomMarker.prototype.draw = function() {
       var self = this;
       var div = this.div;
       if (!div) {
@@ -129,14 +130,13 @@
 
           var point = this.getProjection().fromLatLngToDivPixel(this.position);
            if (point) {
-               div.style.left = point.x + 'px';
-               div.style.top = point.y + 'px';
+               div.style.left = point.x + 40 +'px';
+               div.style.top = point.y + 40 + 'px';
            }
 
           var panes = this.getPanes();
           panes.overlayImage.appendChild(div);
       }
-
   };
 
   alienMap = initMap();
@@ -155,16 +155,13 @@
     //   title: "I'm here"
     // });
 
-
       //var pos = new google.maps.LatLng(lng, lat);
 
-
-
-          var marker = new CustomMarker({
-          //position:  {lat: 38, lng: -98},
-          position: pos,
-          map: alienMap,
-        });
+      var marker = new CustomMarker({
+      //position:  {lat: 38, lng: -98},
+      position: pos,
+      map: alienMap,
+    });
 
   };
 
@@ -196,5 +193,14 @@ function topFunction(identifier) {
 
   alienMap.panTo(center);
 
+  var oldMarkers = document.getElementsByClassName("pulse");
+
+
+    for (var i = 0; i < oldMarkers.length ; i++)
+    {
+      oldMarkers[i].parentNode.removeChild(oldMarkers[i]);
+    }
+
+  
   newMarker(center);
 }
