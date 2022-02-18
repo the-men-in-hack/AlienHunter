@@ -110,6 +110,7 @@
     //   map: map,
     //   title: "I'm here"
     // });
+    
     return map;
   }
 
@@ -118,8 +119,6 @@
   function CustomMarker(opts) {
       this.setValues(opts);
   }
-  
-  var markerSet = false;
 
   CustomMarker.prototype.draw = function() {
       var self = this;
@@ -140,7 +139,6 @@
   };
 
   alienMap = initMap();
-  var IncidentMarker = false;
 
   function newMarker(pos)
   {
@@ -191,7 +189,8 @@ function topFunction(identifier) {
   var long = parseFloat(identifier.getAttribute('data-longitude'));
   const center = new google.maps.LatLng(lat, long);
 
-  alienMap.panTo(center);
+  //alienMap.panTo(center);
+  alienMap.setCenter(center);
 
   var oldMarkers = document.getElementsByClassName("pulse");
 
@@ -201,6 +200,6 @@ function topFunction(identifier) {
       oldMarkers[i].parentNode.removeChild(oldMarkers[i]);
     }
 
-  
+  //alientMap.setMap(null);
   newMarker(center);
 }
