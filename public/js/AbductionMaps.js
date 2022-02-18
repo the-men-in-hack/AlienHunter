@@ -3,7 +3,7 @@
   function initAbductionMap() {
     //Styles a map in night mode.
       const map = new google.maps.Map(document.getElementById("AbductionMap"), {
-      center: { lat: 38.500000, lng: -98.000000 },
+      center: { lat: 47.36667, lng: 8.55 },
       zoom: 4,
       disableDefaultUI: true,
       styles: [
