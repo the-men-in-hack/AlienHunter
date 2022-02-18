@@ -160,7 +160,7 @@
 
 
 
-          new marker = new CustomMarker({
+          var marker = new CustomMarker({
           //position:  {lat: 38, lng: -98},
           position: pos,
           map: alienMap,
